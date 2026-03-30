@@ -1,11 +1,19 @@
-# UMSAE - Baja
+# Electrical & Instrumentation Section
 
-As part of the Electrical/Instrumentation team of the University of Manitoba's Baja Team (2025).\ 
-So far, I've gotten the chance to work on the RPM sensor for the CVT transmission of the car.
-```
-We used an arduino to program a hall effect sensor to read a magnet passing. The magnet was attached to the primary of the transmission.
-After some initial testing with a drill, we got it working 95% accuracy with RPM.
-```
+## Overview
+This repository serves as the central codebase for the baja vehicle's software systems. Which currently covers data acquisition and the 4WD/2WD drivetrain actuation.
 
-# My Role
-- 
+## Core Systems
+1. Drivetrain Actuator Control (Arduino)
+Purpose: Manages the shifting mechanism between 4WD and 2WD using an electrical linear actuator.
+
+Control Logic: Uses hall effect feedback to ensure the actuator reaches the correct stroke length for gear engagement.
+
+2. DAQ Data Logger (Arduino)
+Purpose: Collects real-time CVT primary and secondary speeds to provide useful insights for the Powertrain Section.
+
+Sensors: 
+* Primary/Secondary RPM (Hall Effect)
+* CVT Belt Temp (MLX90614 IR Sensor)
+
+Storage: Logs to FAT32 formatted SD Card as .CSV using a latching circuit switch.
